@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tp.parent</groupId>
+    <artifactId>tp</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>tp</name>
+
+
+
+    <modules>
+        <module>tp-dao</module>
+        <module>tp-common</module>
+        <module>tp-annotation</module>
+    </modules>
+
+
+
+
+    <properties>
+        <!--统一字符集编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--JDK版本-->
+        <java.version>1.8</java.version>
+        <!--spring cloud 版本-->
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <!--数据库连接池版本-->
+        <druid.version>1.1.0</druid.version>
+        <!--pageHelper 版本-->
+        <pageHelper.starter.version>1.2.3</pageHelper.starter.version>
+        <!--fastjson 版本-->
+        <fastjson-version>1.2.32</fastjson-version>
+        <!--mybatis 版本-->
+        <mybatis.starter.version>1.3.2</mybatis.starter.version>
+        <!--swagger 版本-->
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <tp.version>1.0.0-SNAPSHOT</tp.version>
+    </properties>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+    </parent>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--spring-cloud-dependencies
+            是一个依赖管理器的pom文件，
+            与spring-boot-starter-parent的作用一样，
+            不同的是spring-cloud-dependencies是对cloud的依赖管理。
+            如：spring-cloud-starter-config、spring-cloud-starter-netflix-eureka-server-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
